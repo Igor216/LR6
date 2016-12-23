@@ -1,0 +1,20 @@
+{% extends 'myfile.html' %}
+
+{% block title %}
+    Lab6
+{% endblock %}
+
+{% block head %}
+    Транзакции
+{% endblock %}
+
+{% block body %}
+    Список транзакций:
+    <p>id Сумма Тип id юзера id банка
+    {% for i in transactions %}
+    <br> {{i.idtran}}  {{i.sum}}  {{i.type}} {{i.user_id}} {{i.bank_id}}
+
+    {% empty %}
+    Список пуст
+    {% endfor %}
+{% endblock %}
